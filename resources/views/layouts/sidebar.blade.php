@@ -13,8 +13,9 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                        with font-awesome or any other icon font library -->
+                @if (Auth::check() && Auth::user()->role === 'admin')
                 <li class="nav-item">
-                    <a href="{{ url('/admin/dashboard') }}" class="nav-link">
+                    <a href="{{ url('/home') }}" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -22,7 +23,6 @@
                     </a>
                 </li>
                 <li class="nav-header">ACCOUNT SETTINGS</li>
-                @if (Auth::check() && Auth::user()->role === 'admin')
                 <li class="nav-item">
                     <a href="{{ url('/admin/students') }}" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
@@ -50,13 +50,14 @@
                 @endif
                 @if (Auth::check() && Auth::user()->role === 'user')
                 <li class="nav-item">
-                    <a href="{{ url('/vote') }}" class="nav-link">
+                    <a href="{{ url('/home') }}" class="nav-link">
                         <i class="nav-icon fas fa-history"></i>
                         <p>
                             Vote
                         </p>
                     </a>
                 </li>
+                <li class="nav-header">ACCOUNT SETTINGS</li>
                 @endif
                 <li class="nav-item">
                     <a href="{{ url('/profile') }}" class="nav-link">

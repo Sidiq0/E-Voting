@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Vote;
+use App\Models\User;
+use App\Models\Candidate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
@@ -28,7 +30,8 @@ class HomeController extends Controller
         if ($user->role === 'admin') {
             return view('admin.dashboard',compact('user'));
         } elseif ($user->role === 'user') {
-            return view('user.dashboard',compact('user'));
+            $candidates = Candidate::withCount('votes')->get();
+            return view('user.dashboard',compact('candidates'));
         }
     }
 }

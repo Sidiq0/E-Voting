@@ -23,29 +23,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-
-        if ($user->role === 'admin') {
-            return view('admin.dashboard',compact('user'));
-        } elseif ($user->role === 'user') {
-            return view('user.dashboard',compact('user'));
-        }
+            return view('admin.dashboard');
     }
 
-    public function candidates()
-    {
-            return view('admin.candidates');
-
-    }
-
-    public function students()
-    {
-            return view('admin.students');
-
-    }
-    public function riwayat_votes()
-    {
-            return view('admin.votes');
-
-    }
 }
