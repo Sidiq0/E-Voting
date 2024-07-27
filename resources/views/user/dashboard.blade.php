@@ -37,7 +37,7 @@
                             <td>{{ $candidate->mission }}</td>
                             <td class="text-center">
                                 <div class="d-flex justify-content-center">
-                                    <button class="btn btn-primary btn-sm mr-2 edit-btn"
+                                    <button class="btn btn-primary btn mr-2 edit-btn"
                                             data-toggle="modal"
                                             data-target="#candidateModal"
                                             data-name="{{ $candidate->name }}"
@@ -49,7 +49,7 @@
                                     <form class="voteForm" method="POST" action="{{ route('vote.store') }}">
                                         @csrf
                                         <input type="hidden" name="candidate_id" value="{{ $candidate->id }}">
-                                        <button type="submit">Vote</button>
+                                        <button class="btn btn-success btn mr-2" type="submit">Vote</button>
                                     </form>
                                 </div>
                             </td>
