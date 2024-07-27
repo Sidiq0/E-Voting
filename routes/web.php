@@ -18,6 +18,9 @@ Auth::routes(); // Remove one of the Auth::routes() calls
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::post('/vote', [VoteController::class, 'store'])->name('vote.store');
+Route::get('/vote/warning', function () {
+    return view('user.warning');
+})->name('vote.warning');
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 

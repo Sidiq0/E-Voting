@@ -25,7 +25,7 @@ class VoteController extends Controller
 
         $existingVote = Vote::where('user_id', $user->id)->first();
         if ($existingVote) {
-            return redirect()->back()->withErrors('You have already voted.');
+            return response()->json(['existingVote' => true]);
         }
 
         // Assign the candidate to the user
@@ -34,7 +34,7 @@ class VoteController extends Controller
         $vote->candidate_id = $request->candidate_id;
         $vote->save();
 
-        return redirect()->back()->with('success', 'Vote cast successfully.');
+        return response()->json(['existingVote' => false]);
     }
 
 
