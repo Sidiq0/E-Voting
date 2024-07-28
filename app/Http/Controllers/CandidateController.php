@@ -83,10 +83,4 @@ class CandidateController extends Controller
         return redirect()->route('admin.candidates.index')->with('success', 'Candidate deleted successfully');
     }
 
-    public function votes_history()
-    {
-        $candidates = Candidate::withCount('votes')->get();
-        return view('admin.candidates.votesCount', compact('candidates'));
-
-    }
 }

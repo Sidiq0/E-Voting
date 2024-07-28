@@ -18,15 +18,10 @@ Auth::routes(); // Remove one of the Auth::routes() calls
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::post('/vote', [VoteController::class, 'store'])->name('vote.store');
-Route::get('/vote/warning', function () {
-    return view('user.warning');
-})->name('vote.warning');
-
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('Dashboard');;
-    Route::get('/votes', [CandidateController::class, 'votes_history'])->name('admin.candidates.votesCount');;
     Route::prefix('students')->group(function () {
         Route::get('/', [StudentsController::class, 'index'])->name('admin.students.index');
         Route::get('/create', [StudentsController::class, 'create'])->name('admin.students.create');
