@@ -39,14 +39,6 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ url('/admin/votes') }}" class="nav-link">
-                        <i class="nav-icon fas fa-history"></i>
-                        <p>
-                            Riwayat Vote
-                        </p>
-                    </a>
-                </li>
                 @endif
                 @if (Auth::check() && Auth::user()->role === 'user')
                 <li class="nav-item">
