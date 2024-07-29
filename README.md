@@ -58,7 +58,12 @@ An online voting system for the student activity units at your campus, featuring
     php artisan key:generate
     ```
 
-5. **Run migrations and seed the database:**
+5. **Create a symbolic link to the storage directory:**
+    ```sh
+    php artisan storage:link
+    ```
+
+6. **Run migrations and seed the database:**
     ```sh
     php artisan migrate:fresh --seed
     ```
