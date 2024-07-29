@@ -1,6 +1,6 @@
 # E-Voting Project
 
-An online voting system for the student activity units at your campus, featuring admin and user dashboards. This project utilizes AdminLTE 3 for the bootstrap template and Chart.js for displaying vote counts.
+An online voting system for the student activity units at campus, featuring admin and user dashboards. This project utilizes AdminLTE 3 for the bootstrap template and Chart.js for displaying vote counts.
 
 ## Table of Contents
 
@@ -36,8 +36,7 @@ An online voting system for the student activity units at your campus, featuring
 
 1. **Clone the repository:**
     ```sh
-    git clone https://github.com/your-username/e-voting-project.git
-    cd e-voting-project
+    git clone https://github.com/Sidiq0/E-Voting.git
     ```
 
 2. **Install dependencies:**
